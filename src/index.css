@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    :root {
+      --font-sans: '__SansSerif_Fallback';
+      --font-display: '__Display_Fallback';
+    }
+  }
+  
+  .font-display {
+    font-family: var(--font-display);
+  }
+  
+  /* Smooth scrolling and better text rendering */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Animations */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
