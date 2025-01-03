@@ -9,7 +9,7 @@ const events = [
     date: 'April 15, 2024',
     location: 'Community Center',
     attendees: 45,
-    image: '/placeholder.svg?height=400&width=600'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8kKapKbxczyysFM3qn_wbI65WWBYe3BCHlw&s'
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const events = [
     date: 'April 20, 2024',
     location: 'City Park',
     attendees: 30,
-    image: '/placeholder.svg?height=400&width=600'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuAj9lvhZWWtXzlD5R_Vg3vEm9QM4arxB-Mw&s'
   },
 ]
 
@@ -26,19 +26,19 @@ const communities = [
     name: 'Balcony Gardeners',
     members: 1200,
     topics: 156,
-    image: '/placeholder.svg?height=100&width=100'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVf0NmEaFiUYXggeXqrfnhf90WZAjjKRoayQ&s'
   },
   {
     name: 'Herb Enthusiasts',
     members: 850,
     topics: 98,
-    image: '/placeholder.svg?height=100&width=100'
+    image: 'https://m.media-amazon.com/images/I/71kf51+IINL._AC_UF1000,1000_QL80_.jpg'
   },
   {
     name: 'Urban Farmers',
     members: 2300,
     topics: 234,
-    image: '/placeholder.svg?height=100&width=100'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Cu0i0IUq6UdL49eL5F4lxjA_VcD3xf9umw&s'
   },
 ]
 

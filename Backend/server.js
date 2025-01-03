@@ -2,6 +2,7 @@ const express = require("express");
 const connectDb = require("./DB/dbCon");
 const User = require("./DB/userSchema");
 const Mentor = require("./DB/mentorSchema");
+const Request = require("./DB/RequestSchema");
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -115,6 +116,54 @@ app.get('/api/mentors', async (req, res) => {
     } catch (error) {
         console.error("Error fetching mentors:", error);
         res.status(500).json({ error: "Failed to fetch mentors" });
+    }
+});
+
+// Create a connection request
+app.post('/api/requests', async (req, res) => {
+    try {
+        const { userId, mentorId, userName } = req.body;
+        const newRequest = new Request({ userId, mentorId, userName });
+        await newRequest.save();
+        res.status(201).json(newRequest);
+    } catch (error) {
+        console.error("Error creating request:", error);
+        res.status(500).json({ error: "Failed to create request" });
+    }
+});
+
+// Get requests for a mentor
+app.get('/api/requests/:mentorId', async (req, res) => {
+    try {
+        // Dummy requests for testing
+        const dummyRequests = [
+            {
+                _id: "1",
+                userId: "user1",
+                mentorId: req.params.mentorId,
+                userName: "Alice Johnson",
+                createdAt: new Date(),
+            },
+            {
+                _id: "2",
+                userId: "user2",
+                mentorId: req.params.mentorId,
+                userName: "Bob Smith",
+                createdAt: new Date(),
+            },
+            {
+                _id: "3",
+                userId: "user3",
+                mentorId: req.params.mentorId,
+                userName: "Charlie Brown",
+                createdAt: new Date(),
+            },
+        ];
+
+        res.json(dummyRequests);
+    } catch (error) {
+        console.error("Error fetching requests:", error);
+        res.status(500).json({ error: "Failed to fetch requests" });
     }
 });
 

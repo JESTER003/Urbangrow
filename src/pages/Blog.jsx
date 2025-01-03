@@ -10,7 +10,7 @@ function Blog() {
       excerpt: 'Learn how to maximize your small garden space with these expert tips.',
       date: 'March 15, 2024',
       author: 'Sarah Johnson',
-      imageUrl: '/images/small-space.jpg'
+      imageUrl: 'https://static.vecteezy.com/system/resources/previews/013/021/640/non_2x/tips-and-tricks-poster-icon-design-education-faq-flat-vector.jpg'
     },
     {
       slug: 'indoor-herbs',
@@ -18,7 +18,7 @@ function Blog() {
       excerpt: 'Discover the secrets to maintaining a thriving indoor herb garden.',
       date: 'March 10, 2024',
       author: 'Michael Chen',
-      imageUrl: '/images/herbs.jpg'
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLJ0r28w_XGlsL8U_uypLyB5dNYNLzak9IXg&s'
     },
     {
       slug: 'sustainable-practices',
@@ -48,9 +48,9 @@ function Blog() {
               className="bg-white rounded-lg shadow-md overflow-hidden"
             >
               <Link to={`/blog/${post.slug}`}>
-                <div className="h-48 bg-gray-200">
+                <div className="h-48 bg-green-100">
                   <div className="w-full h-full flex items-center justify-center text-gray-500">
-                    [Blog Image]
+                  <img src={blogPosts.imageUrl} alt="" />
                   </div>
                 </div>
                 <div className="p-6">

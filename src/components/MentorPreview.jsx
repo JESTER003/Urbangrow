@@ -6,17 +6,17 @@ const featuredMentors = [
   {
     name: 'Maria Rodriguez',
     specialty: 'Urban Vegetable Gardens',
-    image: '/placeholder.svg?height=400&width=400',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQHRCB7tVvMYzQzkPdaNEmzAeACnFHQ180vw&s',
   },
   {
     name: 'John Chen',
     specialty: 'Vertical Gardening',
-    image: '/placeholder.svg?height=400&width=400',
+    image: 'https://media.npr.org/assets/img/2014/05/22/16403024_h219136_slide-78464cd5454221c87d975ca709fe71ee64b50323.jpg?s=1100&c=50&f=jpeg',
   },
   {
     name: 'Aisha Patel',
     specialty: 'Organic Pest Control',
-    image: '/placeholder.svg?height=400&width=400',
+    image: 'https://image.tensorartassets.com/cdn-cgi/image/anim=false,plain=false,w=320,q=85/posts/images/685011670115854685/c3bd1e2d-f0cf-44aa-8b75-331582cecdf9.jpg',
   },
 ]
 

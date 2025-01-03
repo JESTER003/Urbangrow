@@ -17,6 +17,8 @@ import BlogPost from './components/BlogPost';
 import Login from './components/login';
 import EquipmentShare from './pages/EquipmentShare';
 import Schemes from './pages/Schemes';
+import MentorRequest from './pages/MentorRequest';
+
 
 
 export default function App() {
@@ -41,6 +43,7 @@ export default function App() {
                 <Route path="/blog/:slug" element={<PrivateRoute><BlogPost /></PrivateRoute>} />
                 <Route path="/equipmentshare" element={<PrivateRoute><EquipmentShare/></PrivateRoute>} />
                 <Route path="/schemes" element={<PrivateRoute><Schemes/></PrivateRoute>} />
+                <Route path="/request" element={<PrivateRoute><MentorRequest/></PrivateRoute>} />
               </Routes>
             </div>
           </div>

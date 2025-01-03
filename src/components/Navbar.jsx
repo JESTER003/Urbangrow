@@ -44,38 +44,58 @@ export function Navbar() {
 
           {/* Navigation Links */}
           <div className="flex flex-col space-y-4">
-            <Link to="/" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
-              <FaHome className="text-xl" />
-              <span className="hidden md:inline ml-2">Home</span>
-            </Link>
-            <Link to="/shop" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
-              <FaShoppingCart className="text-xl" />
-              <span className="hidden md:inline ml-2">Shop</span>
-            </Link>
-            <Link to="/learn" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
-              <FaBook className="text-xl" />
-              <span className="hidden md:inline ml-2">Learn</span>
-            </Link>
-            <Link to="/mentors" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
-              <FaUserFriends className="text-xl" />
-              <span className="hidden md:inline ml-2">Mentors</span>
-            </Link>
-            <Link to="/community" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
-              <FaUserFriends className="text-xl" />
-              <span className="hidden md:inline ml-2">Community</span>
-            </Link>
-            <Link to="/blog" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
-              <FaBlog className="text-xl" />
-              <span className="hidden md:inline ml-2">Blog</span>
-            </Link>
-            <Link to="/equipmentshare" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
-              <FaTools className="text-xl" />
-              <span className="hidden md:inline ml-2">Equipment Share</span>
-            </Link>
-            <Link to="/schemes" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
-              <FaLandmark className="text-xl" />
-              <span className="hidden md:inline ml-2">Govt. Schemes</span>
-            </Link>
+            {user?.role === 'user' && (
+              <>
+                <Link to="/" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaHome className="text-xl" />
+                  <span className="hidden md:inline ml-2">Home</span>
+                </Link>
+                <Link to="/shop" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaShoppingCart className="text-xl" />
+                  <span className="hidden md:inline ml-2">Shop</span>
+                </Link>
+                <Link to="/learn" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaBook className="text-xl" />
+                  <span className="hidden md:inline ml-2">Learn</span>
+                </Link>
+                <Link to="/mentors" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaUserFriends className="text-xl" />
+                  <span className="hidden md:inline ml-2">Mentors</span>
+                </Link>
+              </>
+            )}
+            {user?.role === 'mentor' && (
+              <>
+                <Link to="/" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaHome className="text-xl" />
+                  <span className="hidden md:inline ml-2">Home</span>
+                </Link>
+                <Link to="/shop" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaShoppingCart className="text-xl" />
+                  <span className="hidden md:inline ml-2">Shop</span>
+                </Link>
+                <Link to="/request" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaShoppingCart className="text-xl" />
+                  <span className="hidden md:inline ml-2">Request</span>
+                </Link>
+                <Link to="/community" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaUserFriends className="text-xl" />
+                  <span className="hidden md:inline ml-2">Community</span>
+                </Link>
+                <Link to="/blog" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaBlog className="text-xl" />
+                  <span className="hidden md:inline ml-2">Blog</span>
+                </Link>
+                <Link to="/equipmentshare" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaTools className="text-xl" />
+                  <span className="hidden md:inline ml-2">Equipment Share</span>
+                </Link>
+                <Link to="/schemes" className="flex items-center justify-center md:justify-start text-gray-600 hover:text-emerald-500 transition-colors">
+                  <FaLandmark className="text-xl" />
+                  <span className="hidden md:inline ml-2">Govt. Schemes</span>
+                </Link>
+              </>
+            )}
           </div>
         </div>
 
@@ -136,7 +156,7 @@ export function Navbar() {
                     >
                       Your Orders
                     </Link>
-                    
+
                     {/* Logout Button */}
                     <button
                       onClick={handleLogout}

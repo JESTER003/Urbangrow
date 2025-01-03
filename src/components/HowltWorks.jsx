@@ -5,22 +5,22 @@ const steps = [
   {
     title: 'Sign Up',
     description: 'Create your account and tell us about your space and gardening goals.',
-    image: '/placeholder.svg?height=300&width=300',
+    image: 'https://t4.ftcdn.net/jpg/03/82/44/77/360_F_382447750_5MaezlFzTC5UVVckT4OdOblrrlJNFHaB.jpg',
   },
   {
     title: 'Meet Experts',
     description: 'Receive a customized urban gardening kit tailored to your needs.',
-    image: '/placeholder.svg?height=300&width=300',
+    image: 'https://st3.depositphotos.com/1005979/16712/i/450/depositphotos_167121946-stock-photo-meet-the-experts-card.jpg',
   },
   {
     title: 'Start Growing',
     description: 'Follow our guides to plant and nurture your urban garden.',
-    image: '/placeholder.svg?height=300&width=300',
+    image: 'https://thumbs.dreamstime.com/b/young-plant-growing-fresh-ground-new-start-ecology-concept-top-view-image-94221180.jpg',
   },
   {
     title: 'Enjoy the Harvest',
     description: 'Reap the benefits of your own fresh, homegrown produce.',
-    image: '/placeholder.svg?height=300&width=300',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYwD-O1Cs53KvbM5JrbyEdPVFwT8dezDKbtw&s',
   },
 ]
 
