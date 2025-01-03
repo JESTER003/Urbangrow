@@ -49,9 +49,7 @@ function Blog() {
             >
               <Link to={`/blog/${post.slug}`}>
                 <div className="h-48 bg-green-100">
-                  <div className="w-full h-full flex items-center justify-center text-gray-500">
-                  <img src={blogPosts.imageUrl} alt="" />
-                  </div>
+                  <img src={post.imageUrl} alt={post.title} className="w-full h-full object-cover" />
                 </div>
                 <div className="p-6">
                   <h2 className="text-xl font-semibold text-gray-900 mb-2">

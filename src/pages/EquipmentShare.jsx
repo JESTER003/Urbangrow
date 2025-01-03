@@ -39,11 +39,7 @@ function EquipmentCard({ equipment, onContactFarmer, onRent }) {
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <div className="p-6">
         <div className="aspect-square relative overflow-hidden rounded-lg mb-4">
-          <img
-            src={equipment.image}
-            alt={equipment.name}
-            className="object-cover w-full h-full"
-          />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1DzqFJ-uX4N9Hm1AO-o88YUgG40sl6WPJTg&s" alt="" />
         </div>
         <h2 className="text-2xl font-semibold mb-2">{equipment.name}</h2>
         <p className="text-gray-600 mb-4">{equipment.description}</p>
@@ -330,7 +326,7 @@ function EquipmentShare() {
   }
 
   return (
-    <div className=" min-h-screen bg-green-50 px-4 py-12">
+    <div className="mt-24 min-h-screen bg-green-50 px-4 py-12">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
