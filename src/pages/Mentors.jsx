@@ -3,50 +3,59 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 function Mentors() {
-  // This would typically come from an API
   const mentors = [
     {
       id: 1,
       name: "John Smith",
-      specialty: "Urban Gardening Expert",
+      specialty: "Commercial Farming Expert",
       rating: 4.8,
       reviews: 127,
-      imageUrl: "https://example.com/mentor1.jpg"
+      bio: "With over 15 years of experience in large-scale agriculture, John specializes in optimizing yields for commercial farms. He has a deep understanding of advanced machinery, modern irrigation systems, and crop rotation techniques. John has helped transform numerous farms into profitable ventures by leveraging technology and sustainable practices.",
+      expertise: ["Crop Rotation", "Modern Irrigation Systems", "Agri-Tech Integration"],
+      imageUrl: "https://example.com/mentor1.jpg",
     },
     {
       id: 2,
       name: "Sarah Johnson",
-      specialty: "Hydroponics Specialist",
+      specialty: "Plantation Farming Specialist",
       rating: 4.9,
       reviews: 93,
-      imageUrl: "https://example.com/mentor2.jpg"
+      bio: "Sarah has spent over a decade mastering plantation farming, particularly in cultivating tea, coffee, and spices. Her expertise lies in soil health management, pest control, and maximizing yields in tropical climates. She has worked with farmers across India to improve cash crop production sustainably.",
+      expertise: ["Tea Cultivation", "Soil Health Management", "Sustainable Cash Crop Farming"],
+      imageUrl: "https://example.com/mentor2.jpg",
     },
     {
       id: 3,
       name: "Godabhai Patel",
-      specialty: "Hydroponics Specialist",
-      rating: 4.9,
-      reviews: 93,
-      imageUrl: "https://example.com/mentor2.jpg"
+      specialty: "Mixed Farming Innovator",
+      rating: 4.7,
+      reviews: 89,
+      bio: "Godabhai is a mixed farming pioneer with expertise in integrating crop production and livestock rearing. He has introduced innovative methods like crop forestry and fish rearing in paddy fields, creating diverse and sustainable farming ecosystems.",
+      expertise: ["Crop Forestry", "Horticulture", "Paddy with Fish Rearing"],
+      imageUrl: "https://example.com/mentor3.jpg",
     },
     {
       id: 4,
-      name: "Bhikhalal ",
-      specialty: "Hydroponics Specialist",
-      rating: 4.9,
-      reviews: 93,
-      imageUrl: "https://example.com/mentor2.jpg"
+      name: "Bhikhalal Mehta",
+      specialty: "Terrace Agriculture Expert",
+      rating: 4.6,
+      reviews: 72,
+      bio: "Bhikhalal is a seasoned terrace agriculture mentor who has helped farmers adapt to challenging mountainous terrains. His methods focus on designing efficient terraces, managing water resources, and cultivating high-altitude crops. Bhikhalal is passionate about empowering farmers in hilly regions.",
+      expertise: ["Terrace Design", "High-Altitude Crop Cultivation", "Water Resource Management"],
+      imageUrl: "https://example.com/mentor4.jpg",
     },
     {
       id: 5,
       name: "Bharatbhai Patel",
-      specialty: "Hydroponics Specialist",
-      rating: 4.9,
-      reviews: 93,
-      imageUrl: "https://example.com/mentor2.jpg"
+      specialty: "Sustainable Farming Advocate",
+      rating: 4.8,
+      reviews: 88,
+      bio: "Bharatbhai is a strong advocate for sustainable farming practices. He has extensive knowledge in organic farming, composting, and renewable energy usage on farms. His goal is to help farmers achieve productivity without compromising environmental health.",
+      expertise: ["Organic Farming", "Composting Techniques", "Renewable Energy in Farming"],
+      imageUrl: "https://example.com/mentor5.jpg",
     },
-    // Add more mentors...
   ];
+  
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
@@ -83,6 +92,7 @@ function Mentors() {
                   </div>
                   <Link
                     to={`/mentors/${mentor.id}`}
+                    state={{ mentor }}
                     className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
                   >
                     View Profile
@@ -98,4 +108,3 @@ function Mentors() {
 }
 
 export default Mentors;
-

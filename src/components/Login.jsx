@@ -41,6 +41,17 @@ function Login() {
           <div className="flex justify-center space-x-6 mb-4">
             <button
               type="button"
+              onClick={() => setRole('mentor')}
+              className={`px-4 py-2 rounded-md ${
+                role === 'mentor'
+                  ? 'bg-emerald-600 text-white'
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              Farmer
+            </button>
+            <button
+              type="button"
               onClick={() => setRole('user')}
               className={`px-4 py-2 rounded-md ${
                 role === 'user'
@@ -49,17 +60,6 @@ function Login() {
               }`}
             >
               User
-            </button>
-            <button
-              type="button"
-              onClick={() => setRole('mentor')}
-              className={`px-4 py-2 rounded-md ${
-                role === 'mentor'
-                  ? 'bg-emerald-600 text-white'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              Mentor
             </button>
           </div>
 
@@ -91,7 +91,7 @@ function Login() {
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
             >
-              Sign in as {role === 'mentor' ? 'Mentor' : 'User'}
+              Sign in as {role === 'mentor' ? 'Farmer' : 'User'}
             </button>
           </div>
           

@@ -1,32 +1,17 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 function MentorDetail() {
-  const { mentorId } = useParams();
+  const location = useLocation();
   const navigate = useNavigate();
+  const mentorData = location.state?.mentor; // Retrieve mentor data passed via `state`
 
-  // This would typically come from an API or database
-  const mentorData = 
-    {
-      id: mentorId,
-      name: "John Smith",
-      specialty: "Urban Gardening Expert",
-      experience: "15+ years",
-      rating: 4.8,
-      reviews: 127,
-      bio: "Expert in sustainable urban gardening with a focus on small space optimization and organic growing techniques. Certified in permaculture design and hydroponics.",
-      expertise: [
-        "Small Space Gardening",
-        "Hydroponics",
-        "Organic Gardening",
-        "Permaculture",
-        "Indoor Plants"
-      ],
-      availability: "Mon-Fri, 9AM-5PM",
-      hourlyRate: "$45/hour",
-      imageUrl: "https://example.com/mentor-image.jpg" // Replace with actual image URL
-    }
+  if (!mentorData) {
+    // Redirect to mentors page if no data is passed
+    navigate('/mentors');
+    return null;
+  }
 
   return (
     <div className="min-h-screen pt-20 bg-gray-50">
@@ -37,20 +22,21 @@ function MentorDetail() {
           transition={{ duration: 0.5 }}
           className="bg-white shadow rounded-lg overflow-hidden"
         >
-          {/* Mentor Header */}
+          {/* Header Section */}
           <div className="px-4 py-5 sm:px-6 bg-emerald-600">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
+                {/* Mentor Initial */}
                 <div className="h-16 w-16 rounded-full bg-emerald-300 flex items-center justify-center text-2xl text-white font-bold">
                   {mentorData.name[0]}
                 </div>
+                {/* Mentor Name and Specialty */}
                 <div>
-                  <h2 className="text-2xl font-bold text-white">
-                    {mentorData.name}
-                  </h2>
+                  <h2 className="text-2xl font-bold text-white">{mentorData.name}</h2>
                   <p className="text-emerald-100">{mentorData.specialty}</p>
                 </div>
               </div>
+              {/* Rating and Reviews */}
               <div className="flex items-center space-x-2 text-emerald-100">
                 <span>★ {mentorData.rating}</span>
                 <span>({mentorData.reviews} reviews)</span>
@@ -58,62 +44,20 @@ function MentorDetail() {
             </div>
           </div>
 
-          {/* Mentor Content */}
+          {/* About Section */}
           <div className="px-4 py-5 sm:p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Main Info */}
-              <div className="md:col-span-2 space-y-6">
-                <div>
-                  <h3 className="text-lg font-medium text-gray-900">About</h3>
-                  <p className="mt-2 text-gray-600">{mentorData.bio}</p>
-                </div>
+            <h3 className="text-lg font-medium text-gray-900">About</h3>
+            <p className="mt-2 text-gray-600">{mentorData.bio || 'Bio not available.'}</p>
+          </div>
 
-                <div>
-                  <h3 className="text-lg font-medium text-gray-900">Expertise</h3>
-                  <div className="mt-2 flex flex-wrap gap-2">
-                    {mentorData.expertise.map((skill, index) => (
-                      <span
-                        key={index}
-                        className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-emerald-100 text-emerald-800"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Sidebar */}
-              <div className="space-y-6">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="text-lg font-medium text-gray-900 mb-4">Session Details</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <label className="text-sm font-medium text-gray-500">Rate</label>
-                      <p className="text-gray-900">{mentorData.hourlyRate}</p>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-500">Availability</label>
-                      <p className="text-gray-900">{mentorData.availability}</p>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-gray-500">Experience</label>
-                      <p className="text-gray-900">{mentorData.experience}</p>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={() => {
-                      // Add connection logic here
-                      alert(`Connecting with ${mentorData.name}...`);
-                    }}
-                    className="mt-6 w-full bg-emerald-600 text-white py-2 px-4 rounded-md hover:bg-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
-                  >
-                    Connect with {mentorData.name}
-                  </button>
-                </div>
-              </div>
-            </div>
+          {/* Expertise Section */}
+          <div className="px-4 py-5 sm:p-6">
+            <h3 className="text-lg font-medium text-gray-900">Expertise</h3>
+            <ul className="mt-2 list-disc pl-5 text-gray-600">
+              {mentorData.expertise?.map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))}
+            </ul>
           </div>
         </motion.div>
       </div>
@@ -121,4 +65,4 @@ function MentorDetail() {
   );
 }
 
-export default MentorDetail; 
+export default MentorDetail;

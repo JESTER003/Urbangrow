@@ -93,6 +93,16 @@ function Signup() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+            <div>
+              <input
+                type="numbers"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 focus:z-10 sm:text-sm"
+                placeholder="mobile number"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
           </div>
 
           <div>
