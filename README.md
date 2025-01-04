@@ -2,16 +2,6 @@
 
 UrbanGrow is a web application designed to help urban dwellers create and maintain sustainable and beautiful garden spaces. The application provides resources, expert guidance, and a community for urban gardeners.
 
-## Table of Contents 🖋️
-
-- [Features](#features)
-- [Installation](#installation)
-- [Backend Setup](#backend-setup)
-- [Frontend Setup](#frontend-setup)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features 💻
 
 - User and Mentor registration and login
