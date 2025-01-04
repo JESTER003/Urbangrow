@@ -14,7 +14,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import Profile from './pages/Profile';
 import MentorDetail from './pages/MentorDetail';
 import BlogPost from './components/BlogPost';
-import Login from './components/login';
+import Login from './components/Login';
 import EquipmentShare from './pages/EquipmentShare';
 import Schemes from './pages/Schemes';
 import MentorRequest from './pages/MentorRequest';
