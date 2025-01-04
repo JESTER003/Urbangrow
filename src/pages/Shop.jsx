@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { ShoppingCart } from 'lucide-react'
 import Checkout from './Checkout'
 import Navbar from '../components/Navbar'
-import { Footer } from '../components/footer';
+import { Footer } from '../components/Footer';
 
 const products = [
   {
