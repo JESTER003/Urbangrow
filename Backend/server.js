@@ -1,7 +1,7 @@
 const express = require("express");
 const connectDb = require("./DB/dbCon");
 const User = require("./DB/userSchema");
-const Mentor = require("./DB/mentorSchema");
+const Mentor = require("./DB/MentorSchema");
 const Request = require("./DB/RequestSchema");
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
@@ -135,32 +135,8 @@ app.post('/api/requests', async (req, res) => {
 // Get requests for a mentor
 app.get('/api/requests/:mentorId', async (req, res) => {
     try {
-        // Dummy requests for testing
-        const dummyRequests = [
-            {
-                _id: "1",
-                userId: "user1",
-                mentorId: req.params.mentorId,
-                userName: "Alice Johnson",
-                createdAt: new Date(),
-            },
-            {
-                _id: "2",
-                userId: "user2",
-                mentorId: req.params.mentorId,
-                userName: "Bob Smith",
-                createdAt: new Date(),
-            },
-            {
-                _id: "3",
-                userId: "user3",
-                mentorId: req.params.mentorId,
-                userName: "Charlie Brown",
-                createdAt: new Date(),
-            },
-        ];
-
-        res.json(dummyRequests);
+        const requests = await Request.find({ mentorId: req.params.mentorId }).populate('userId', 'name');
+        res.json(requests);
     } catch (error) {
         console.error("Error fetching requests:", error);
         res.status(500).json({ error: "Failed to fetch requests" });
