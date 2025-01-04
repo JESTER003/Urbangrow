@@ -1,12 +1,12 @@
 import React from 'react'
-import { Hero } from '../components/hero'
-import { Features } from '../components/features'
+import { Hero } from '../components/Hero'
+import { Features } from '../components/Features'
 import { Navbar } from '../components/Navbar'
 import { HowItWorks } from '../components/HowltWorks'
 import { MentorPreview } from '../components/MentorPreview'
-import { Testimonials } from '../components/testimonials'
-import { CTA } from '../components/cta'
-import { Footer } from '../components/footer'
+import { Testimonials } from '../components/Testimonials'
+import { CTA } from '../components/CTA'
+import { Footer } from '../components/Footer'
 
 
 
